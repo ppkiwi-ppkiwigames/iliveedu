@@ -1,0 +1,406 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+  <title id="title">Dominum static page</title>
+  <desc id="desc">Self-contained SVG rendering the static page with embedded HTML.</desc>
+  <foreignObject x="0" y="0" width="1920" height="1080">
+    <iframe xmlns="http://www.w3.org/1999/xhtml" title="Dominum static" style="width:1920px;height:1080px;border:0;background:#0b0f19;" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;title&gt;Dominum&lt;/title&gt;
+&lt;link rel=&quot;icon&quot; href=&quot;./src/assets/images/transparent-dominum.png&quot;&gt;
+&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Orbitron:wght@600&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;A proxy site with many promising features :D - Also Fish&quot; /&gt;
+&lt;meta property=&quot;og:type&quot; content=&quot;website&quot; /&gt;
+&lt;meta property=&quot;og:url&quot; content=&quot;&quot; id=&quot;og-url&quot; /&gt;
+&lt;meta property=&quot;og:title&quot; content=&quot;Dominum&quot; /&gt;
+&lt;meta property=&quot;og:description&quot; content=&quot;A proxy site with many promising features :D - Also Fish&quot; /&gt;
+&lt;meta property=&quot;og:image&quot; content=&quot;./src/assets/images/transparent-dominum.png&quot; /&gt;
+&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot; /&gt;
+&lt;meta name=&quot;twitter:url&quot; content=&quot;&quot; id=&quot;twitter-url&quot; /&gt;
+&lt;meta name=&quot;twitter:title&quot; content=&quot;Dominum&quot; /&gt;
+&lt;meta name=&quot;twitter:description&quot; content=&quot;A proxy site with many promising features :D - Also Fish&quot; /&gt;
+&lt;meta name=&quot;twitter:image&quot; content=&quot;./src/assets/images/transparent-dominum.png&quot; /&gt;
+
+&lt;style&gt;
+  :root {
+    --bg: #0b0a16;
+    --accent: #7a5cff;
+    --blue: #00bfff;
+    --text: #e6e6ff;
+    --surface: rgba(255, 255, 255, 0.05);
+    --border: rgba(255, 255, 255, 0.1);
+    --card-bg: rgba(255, 255, 255, 0.03);
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    display: flex;
+    height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    font-family: &#x27;Orbitron&#x27;, sans-serif;
+    overflow: hidden;
+    position: relative;
+  }
+
+  body::before {
+    content: &#x27;&#x27;;
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(122, 92, 255, 0.05) 0%, transparent 60%);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  aside {
+    position: relative;
+    z-index: 10;
+    width: 76px;
+    height: calc(100vh - 40px);
+    margin: 20px;
+    background: var(--surface);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 0;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  .sidebar-top,
+  .sidebar-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .nav-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    color: var(--text);
+    background: transparent;
+  }
+
+  .nav-item i {
+    font-size: 1.35em;
+    transition: all 0.3s ease;
+  }
+
+  .nav-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--accent);
+    transform: scale(1.05);
+  }
+
+  .nav-item.active {
+    background: var(--accent);
+    color: var(--bg);
+    box-shadow: 0 0 15px rgba(122, 92, 255, 0.5);
+  }
+
+  .nav-item.active i {
+    transform: scale(1.1);
+  }
+
+  .nav-item::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translate(10px, -50%) scale(0.9);
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
+    padding: 8px 14px;
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 0.8em;
+    font-family: &#x27;Orbitron&#x27;, sans-serif;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+    z-index: 20;
+  }
+
+  .nav-item:hover::after {
+    opacity: 1;
+    transform: translate(25px, -50%) scale(1);
+  }
+
+  .iframe-container {
+    flex: 1;
+    position: relative;
+    height: 100vh;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    opacity: 0;
+    transform: scale(0.98);
+    transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  iframe.loaded {
+    opacity: 1;
+    transform: scale(1);
+  }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;aside&gt;
+    &lt;div class=&quot;sidebar-top&quot;&gt;
+      &lt;div class=&quot;nav-item active&quot; data-tooltip=&quot;Home&quot; onclick=&quot;loadPage(&#x27;home&#x27;, this)&quot;&gt;
+        &lt;i class=&quot;fa-solid fa-house&quot;&gt;&lt;/i&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;nav-item&quot; data-tooltip=&quot;Games&quot; onclick=&quot;loadPage(&#x27;games&#x27;, this)&quot;&gt;
+        &lt;i class=&quot;fa-solid fa-gamepad&quot;&gt;&lt;/i&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;nav-item&quot; data-tooltip=&quot;Apps&quot; onclick=&quot;loadPage(&#x27;apps&#x27;, this)&quot;&gt;
+        &lt;i class=&quot;fa-solid fa-box-archive&quot;&gt;&lt;/i&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;nav-item&quot; data-tooltip=&quot;Search&quot; onclick=&quot;loadPage(&#x27;search&#x27;, this)&quot;&gt;
+        &lt;i class=&quot;fa-solid fa-magnifying-glass&quot;&gt;&lt;/i&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;nav-item&quot; data-tooltip=&quot;Settings&quot; onclick=&quot;loadPage(&#x27;settings&#x27;, this)&quot;&gt;
+        &lt;i class=&quot;fa-solid fa-gear&quot;&gt;&lt;/i&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;nav-item&quot; data-tooltip=&quot;Extras&quot; onclick=&quot;loadPage(&#x27;extras&#x27;, this)&quot;&gt;
+        &lt;i class=&quot;fa-solid fa-plus&quot;&gt;&lt;/i&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;sidebar-bottom&quot;&gt;
+      &lt;div class=&quot;nav-item&quot; data-tooltip=&quot;Discord&quot; onclick=&quot;window.open(&#x27;https://dsc.gg/dominum/&#x27;, &#x27;_blank&#x27;)&quot;&gt;
+        &lt;i class=&quot;fa-brands fa-discord&quot;&gt;&lt;/i&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/aside&gt;
+
+  &lt;div class=&quot;iframe-container&quot;&gt;
+    &lt;iframe id=&quot;content-frame&quot; src=&quot;./svg/home.svg&quot;&gt;&lt;/iframe&gt;
+  &lt;/div&gt;
+
+&lt;script&gt;
+    function injectBaseTag(doc) {
+        if (!doc) return;
+        try {
+            if (!doc.querySelector(&#x27;base&#x27;)) {
+                const base = doc.createElement(&#x27;base&#x27;);
+                let basePath = window.location.pathname;
+                if (!basePath.endsWith(&#x27;/&#x27;)) {
+                    basePath = basePath.substring(0, basePath.lastIndexOf(&#x27;/&#x27;) + 1);
+                }
+                base.href = window.location.origin + basePath;
+                doc.head.insertBefore(base, doc.head.firstChild);
+            }
+        } catch(e) {}
+    }
+
+    function getCookie(name) {
+        const match = document.cookie.match(new RegExp(&#x27;(^| )&#x27; + name + &#x27;=([^;]+)&#x27;));
+        return match ? decodeURIComponent(match[2]) : null;
+    }
+    
+    function setCookie(name, value, days = 365) {
+        const d = new Date();
+        d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+        document.cookie = `${name}=${encodeURIComponent(value)};expires=${d.toUTCString()};path=/`;
+    }
+
+    function loadPage(page, element) {
+        if(element) {
+            document.querySelectorAll(&#x27;.nav-item&#x27;).forEach(el =&gt; el.classList.remove(&#x27;active&#x27;));
+            element.classList.add(&#x27;active&#x27;);
+        }
+
+        const frame = document.getElementById(&quot;content-frame&quot;);
+        frame.classList.remove(&quot;loaded&quot;); 
+        
+        setTimeout(() =&gt; {
+            frame.src = `./svg/${page}.svg`;
+            frame.onload = () =&gt; {
+                injectBaseTag(frame.contentWindow.document);
+                frame.classList.add(&quot;loaded&quot;); 
+                loadTheme(); 
+            };
+        }, 400); 
+    }
+
+    document.getElementById(&quot;content-frame&quot;).onload = function() {
+        injectBaseTag(this.contentWindow.document);
+        this.classList.add(&quot;loaded&quot;);
+        loadTheme();
+    }
+
+    const currentUrl = window.location.href;
+    document.getElementById(&#x27;og-url&#x27;).setAttribute(&#x27;content&#x27;, currentUrl);
+    document.getElementById(&#x27;twitter-url&#x27;).setAttribute(&#x27;content&#x27;, currentUrl);
+
+    const root = document.documentElement;
+    const themes = {
+      default:{&quot;--bg&quot;:&quot;#0b0a16&quot;,&quot;--accent&quot;:&quot;#7a5cff&quot;,&quot;--blue&quot;:&quot;#00bfff&quot;,&quot;--text&quot;:&quot;#e6e6ff&quot;,
+              &quot;--surface&quot;:&quot;rgba(255,255,255,0.05)&quot;,&quot;--border&quot;:&quot;rgba(255,255,255,0.1)&quot;,&quot;--card-bg&quot;:&quot;rgba(255,255,255,0.03)&quot;},
+      cyber:{&quot;--bg&quot;:&quot;#050c1b&quot;,&quot;--accent&quot;:&quot;#39ff14&quot;,&quot;--blue&quot;:&quot;#00ffff&quot;,&quot;--text&quot;:&quot;#e0ffe0&quot;,
+            &quot;--surface&quot;:&quot;rgba(0,255,0,0.05)&quot;,&quot;--border&quot;:&quot;rgba(0,255,0,0.1)&quot;,&quot;--card-bg&quot;:&quot;rgba(0,255,0,0.03)&quot;},
+      sunset:{&quot;--bg&quot;:&quot;#1a0b0b&quot;,&quot;--accent&quot;:&quot;#ff6f61&quot;,&quot;--blue&quot;:&quot;#ffa500&quot;,&quot;--text&quot;:&quot;#fff0e6&quot;,
+              &quot;--surface&quot;:&quot;rgba(255,110,100,0.05)&quot;,&quot;--border&quot;:&quot;rgba(255,110,100,0.1)&quot;,&quot;--card-bg&quot;:&quot;rgba(255,110,100,0.03)&quot;},
+      neon:{&quot;--bg&quot;:&quot;#0f0020&quot;,&quot;--accent&quot;:&quot;#ff00ff&quot;,&quot;--blue&quot;:&quot;#00ffff&quot;,&quot;--text&quot;:&quot;#ffffff&quot;,
+            &quot;--surface&quot;:&quot;rgba(255,0,255,0.05)&quot;,&quot;--border&quot;:&quot;rgba(255,0,255,0.1)&quot;,&quot;--card-bg&quot;:&quot;rgba(255,0,255,0.03)&quot;},
+      darkred:{&quot;--bg&quot;:&quot;#1b0000&quot;,&quot;--accent&quot;:&quot;#ff0000&quot;,&quot;--blue&quot;:&quot;#cc0000&quot;,&quot;--text&quot;:&quot;#ffe6e6&quot;,
+              &quot;--surface&quot;:&quot;rgba(255,0,0,0.05)&quot;,&quot;--border&quot;:&quot;rgba(255,0,0,0.1)&quot;,&quot;--card-bg&quot;:&quot;rgba(255,0,0,0.03)&quot;},
+      dnv2:{&quot;--bg&quot;: &quot;#050007&quot;,&quot;--accent&quot;: &quot;#ff00de&quot;,&quot;--blue&quot;: &quot;#00fff7&quot;,&quot;--text&quot;: &quot;#ffffff&quot;,
+            &quot;--surface&quot;: &quot;rgba(255, 0, 255, 0.05)&quot;,&quot;--border&quot;: &quot;rgba(255, 0, 255, 0.15)&quot;,&quot;--card-bg&quot;: &quot;rgba(15, 0, 30, 0.7)&quot;},
+      matrix: {&quot;--bg&quot;: &quot;#001100&quot;,&quot;--accent&quot;: &quot;#00ff00&quot;,&quot;--blue&quot;: &quot;#33ff33&quot;,&quot;--text&quot;: &quot;#99ff99&quot;,
+              &quot;--surface&quot;: &quot;rgba(0, 255, 0, 0.05)&quot;,&quot;--border&quot;: &quot;rgba(0, 255, 0, 0.15)&quot;,&quot;--card-bg&quot;: &quot;rgba(0, 50, 0, 0.7)&quot;}
+    };
+
+    function applyTheme(theme) {
+        Object.entries(theme).forEach(([k, v]) =&gt; root.style.setProperty(k, v));
+        
+        const frame = document.getElementById(&quot;content-frame&quot;);
+        if (frame &amp;&amp; frame.contentWindow) {
+            try {
+                Object.entries(theme).forEach(([k, v]) =&gt; frame.contentWindow.document.documentElement.style.setProperty(k, v));
+            } catch (e) {}
+        }
+    }
+
+    function loadTheme() {
+        const name = localStorage.getItem(&quot;dominum-theme&quot;) || &quot;default&quot;;
+        let themeToApply = themes[name] || themes[&#x27;default&#x27;];
+
+        if (name === &quot;custom&quot;) {
+            try {
+                const custom = JSON.parse(localStorage.getItem(&quot;dominum-custom-theme&quot;));
+                if (custom) {
+                    themeToApply = { ...themes.default, ...custom }; 
+                }
+            } catch (e) {
+                themeToApply = themes[&#x27;default&#x27;];
+            }
+        }
+        applyTheme(themeToApply);
+    }
+
+    (function() {
+        const cloakData = getCookie(&quot;dominum-cloak&quot;);
+        if (cloakData) {
+            try {
+                const { title, icon } = JSON.parse(cloakData);
+                if (title) document.title = title;
+                if (icon) {
+                    let link = document.querySelector(&quot;link[rel=&#x27;icon&#x27;]&quot;) || document.createElement(&quot;link&quot;);
+                    link.rel = &quot;icon&quot;;
+                    link.href = icon;
+                    document.head.appendChild(link);
+                }
+            } catch (e) {}
+        }
+
+        document.addEventListener(&quot;keydown&quot;, e =&gt; {
+            const key = (getCookie(&quot;dominum-panic-key&quot;) || &quot;`&quot;).toLowerCase();
+            const link = getCookie(&quot;dominum-panic-link&quot;) || &quot;https://google.com/&quot;;
+            if (e.key.toLowerCase() === key) {
+                window.location.href = link;
+            }
+        });
+    })();
+
+    function exportSettings() {
+        try {
+            const settingsData = {
+                &quot;dominum-theme&quot;: localStorage.getItem(&quot;dominum-theme&quot;),
+                &quot;dominum-custom-theme&quot;: localStorage.getItem(&quot;dominum-custom-theme&quot;),
+                &quot;allCookies&quot;: document.cookie
+            };
+            
+            const dataString = btoa(JSON.stringify(settingsData));
+            const blob = new Blob([dataString], { type: &#x27;text/plain&#x27; });
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement(&#x27;a&#x27;);
+            a.href = url;
+            a.download = &#x27;dominum-settings.dnw&#x27;;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+        } catch (error) {
+            alert(&quot;Failed to export settings.&quot;);
+        }
+    }
+
+    function importSettings(dataString) {
+        try {
+            const importedData = JSON.parse(atob(dataString));
+            
+            if (importedData[&quot;dominum-theme&quot;] !== undefined) {
+                localStorage.setItem(&quot;dominum-theme&quot;, importedData[&quot;dominum-theme&quot;]);
+            }
+            if (importedData[&quot;dominum-custom-theme&quot;] !== undefined) {
+                localStorage.setItem(&quot;dominum-custom-theme&quot;, importedData[&quot;dominum-custom-theme&quot;]);
+            }
+            
+            if (importedData.allCookies) {
+                const d = new Date();
+                d.setTime(d.getTime() + (365 * 24 * 60 * 60 * 1000));
+                const expires = &quot;expires=&quot; + d.toUTCString();
+
+                const cookies = importedData.allCookies.split(&#x27;;&#x27;);
+                cookies.forEach(cookie =&gt; {
+                    const cookieString = cookie.trim();
+                    if (cookieString) {
+                        document.cookie = cookieString + &quot;;&quot; + expires + &quot;;path=/&quot;;
+                    }
+                });
+            }
+            
+            alert(&quot;Settings imported successfully! The page will now reload.&quot;);
+            window.location.reload();
+
+        } catch (error) {
+            alert(&quot;Failed to import settings. The file may be corrupt or invalid.&quot;);
+        }
+    }
+
+    loadTheme();
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;"></iframe>
+  </foreignObject>
+</svg>
