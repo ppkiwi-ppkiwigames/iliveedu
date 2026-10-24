@@ -1,14 +1,52 @@
-<?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
- "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="1024.000000pt" height="68.000000pt" viewBox="0 0 1024.000000 68.000000"
- preserveAspectRatio="xMidYMid meet">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    width="100%"
+    height="100%"
+    style="display:block;margin:0;padding:0;width:100vw;height:100vh;position:fixed;top:0;left:0;overflow:hidden;background:#000;">
 
-<g transform="translate(0.000000,68.000000) scale(0.100000,-0.100000)"
-fill="#000000" stroke="none">
-<path d="M0 340 l0 -340 5120 0 5120 0 0 340 0 340 -5120 0 -5120 0 0 -340z
-m2922 282 l33 -32 0 -250 0 -250 -33 -32 -32 -33 -1400 0 -1400 0 -32 33 -33
-32 0 249 0 249 25 27 c14 15 34 31 45 36 11 4 644 7 1407 6 l1388 -2 32 -33z"/>
-</g>
+    <foreignObject
+        x="0"
+        y="0"
+        width="100%"
+        height="100%"
+        style="overflow:visible;width:100%;height:100%;">
+
+        <xhtml:iframe
+            id="html-frame"
+            frameborder="0"
+            scrolling="auto"
+            allow="fullscreen; autoplay; gamepad; clipboard-read; clipboard-write; microphone; camera"
+            sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals allow-downloads allow-pointer-lock"
+            style="
+                position:fixed;
+                inset:0;
+                width:100%;
+                height:100%;
+                border:0;
+                margin:0;
+                padding:0;
+                display:block;
+                overflow:auto;
+                z-index:999999;
+            ">
+        </xhtml:iframe>
+
+    </foreignObject>
+
+    <script><![CDATA[
+(function () {
+    const encoded = "PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImVuIj4KPGhlYWQ+CjxtZXRhIGNoYXJzZXQ9IlVURi04IiAvPgo8dGl0bGU+R2FtZSBMYXVuY2hlcjwvdGl0bGU+CjxzdHlsZT4KICBib2R5IHsKICAgIG1hcmdpbjogMDsgZGlzcGxheTogZmxleDsganVzdGlmeS1jb250ZW50OiBjZW50ZXI7IGFsaWduLWl0ZW1zOiBjZW50ZXI7CiAgICBoZWlnaHQ6IDEwMHZoOyBiYWNrZ3JvdW5kOiAjMjIyOyBmb250LWZhbWlseTogQXJpYWwsIHNhbnMtc2VyaWY7CiAgfQogIGJ1dHRvbiB7CiAgICBwYWRkaW5nOiAyMHB4IDYwcHg7IGZvbnQtc2l6ZTogMjBweDsgYm9yZGVyOiBub25lOyBib3JkZXItcmFkaXVzOiAxMnB4OwogICAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDQ1ZGVnLCAjMDBjNmZmLCAjMDA3MmZmKTsgY29sb3I6ICNmZmY7IGN1cnNvcjogcG9pbnRlcjsKICAgIGJveC1zaGFkb3c6IDAgNHB4IDE1cHggcmdiYSgwLDAsMCwwLjMpOyB0cmFuc2l0aW9uOiAwLjNzOwogIH0KICBidXR0b246aG92ZXIgewogICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC0zcHgpOwogICAgYm94LXNoYWRvdzogMCA4cHggMjBweCByZ2JhKDAsMCwwLDAuNCk7CiAgfQo8L3N0eWxlPgo8L2hlYWQ+Cjxib2R5PgoKPGJ1dHRvbiBvbmNsaWNrPSJsYXVuY2hHYW1lKCkiPkxhdW5jaCBZb3VyIEdhbWU8L2J1dHRvbj4KCjxzY3JpcHQ+CiAgLy8gUmVwbGFjZSB0aGlzIFVSTCB3aXRoIHlvdXIgdGFyZ2V0IGdhbWUgb3IgcGFnZQogIGNvbnN0IFRBUkdFVF9VUkwgPSAiaHR0cHM6Ly9waXp6YWVkaXRpb24ud2luIjsgLy8gPC0tIFBhc3RlIHlvdXIgVVJMIGhlcmUKCiAgZnVuY3Rpb24gbGF1bmNoR2FtZSgpIHsKICAgIGNvbnN0IHVybCA9IFRBUkdFVF9VUkwudHJpbSgpOwogICAgaWYgKCF1cmwpIHsKICAgICAgYWxlcnQoJ1BsZWFzZSBzZXQgdGhlIFRBUkdFVF9VUkwgaW4gdGhlIHNjcmlwdC4nKTsKICAgICAgcmV0dXJuOwogICAgfQogICAgY29uc3Qgd2luID0gd2luZG93Lm9wZW4oJ2Fib3V0OmJsYW5rJywgJ19ibGFuaycpOwogICAgaWYgKCF3aW4pIHsKICAgICAgYWxlcnQoIlBvcC11cCBibG9ja2VkISBQbGVhc2UgYWxsb3cgcG9wLXVwcy4iKTsKICAgICAgcmV0dXJuOwogICAgfQoKICAgIC8vIERpc2d1aXNlIHRhYiBhcyBHb29nbGUgRG9jcwogICAgd2luLmRvY3VtZW50LnRpdGxlID0gIkdvb2dsZSBEb2NzIC0gU2hhcmVkIjsKICAgIGNvbnN0IGljb24gPSB3aW4uZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnbGluaycpOwogICAgaWNvbi5yZWwgPSAnaWNvbic7CiAgICBpY29uLmhyZWYgPSAnaHR0cHM6Ly9nc3RhdGljLmNvbS9mYXZpY29uLmljbyc7CiAgICB3aW4uZG9jdW1lbnQuaGVhZC5hcHBlbmRDaGlsZChpY29uKTsKCiAgICAvLyBDcmVhdGUgaWZyYW1lIGZpbGxpbmcgdGhlIGVudGlyZSB0YWIKICAgIGNvbnN0IGlmcmFtZSA9IHdpbi5kb2N1bWVudC5jcmVhdGVFbGVtZW50KCdpZnJhbWUnKTsKICAgIGlmcmFtZS5zcmMgPSB1cmw7CiAgICBpZnJhbWUuc3R5bGUuY3NzVGV4dCA9IGAKICAgICAgcG9zaXRpb246IGZpeGVkOyB0b3A6IDA7IGxlZnQ6IDA7IHdpZHRoOiAxMDAlOyBoZWlnaHQ6IDEwMCU7IGJvcmRlcjogbm9uZTsgYmFja2dyb3VuZDogIzAwMDsgei1pbmRleDogOTk5OTsKICAgIGA7CiAgICAvLyBQZXJtaXNzaW9ucyBmb3IgaWZyYW1lCiAgICBpZnJhbWUuc2V0QXR0cmlidXRlKCdhbGxvdycsICdmdWxsc2NyZWVuOyBwb2ludGVyLWxvY2s7IGNhbWVyYTsgbWljcm9waG9uZTsgYXV0b3BsYXknKTsKICAgIGlmcmFtZS5zZXRBdHRyaWJ1dGUoJ3NhbmRib3gnLCAnYWxsb3ctc2NyaXB0cyBhbGxvdy1zYW1lLW9yaWdpbiBhbGxvdy1mb3JtcyBhbGxvdy1wb3B1cHMgYWxsb3ctbW9kZXJhdGlvbicpOwoKICAgIC8vIEFwcGVuZCBpZnJhbWUKICAgIHdpbi5kb2N1bWVudC5ib2R5LnN0eWxlLm1hcmdpbiA9ICcwJzsKICAgIHdpbi5kb2N1bWVudC5ib2R5LmFwcGVuZENoaWxkKGlmcmFtZSk7CgogICAgLy8gSG90a2V5IHRvIGVzY2FwZQogICAgd2luLmFkZEV2ZW50TGlzdGVuZXIoJ2tleWRvd24nLCBmdW5jdGlvbihlKSB7CiAgICAgIGlmIChlLmtleSA9PT0gJ2AnKSB7CiAgICAgICAgd2luLmxvY2F0aW9uLnJlcGxhY2UoJ2h0dHBzOi8vY2xhc3Nyb29tLmdvb2dsZS5jb20nKTsKICAgICAgfQogICAgfSk7CiAgfQo8L3NjcmlwdD4KCjwvYm9keT4KPC9odG1sPg==";
+    const binary = atob(encoded);
+    const bytes = new Uint8Array(binary.length);
+    for (let i = 0; i < binary.length; i++) {
+        bytes[i] = binary.charCodeAt(i);
+    }
+    const html = new TextDecoder("utf-8").decode(bytes);
+    const frame = document.getElementById("html-frame");
+    if (!frame) return;
+    frame.srcdoc = html;
+})();
+    ]]></script>
 </svg>
